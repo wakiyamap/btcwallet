@@ -183,9 +183,9 @@ PS> $editor $env:LOCALAPPDATA\Btcwallet\btcwallet.conf
 Linux/BSD/POSIX (Installed from source):
 ```bash
 $ cp $GOPATH/src/github.com/wakiyamap/monad/sample-monad.conf ~/.monad/monad.conf
-$ cp $GOPATH/src/github.com/wakiyamap/monawallet/sample-btcwallet.conf ~/.btcwallet/btcwallet.conf
+$ cp $GOPATH/src/github.com/wakiyamap/monawallet/sample-btcwallet.conf ~/.monawallet/monawallet.conf
 $ $EDITOR ~/.monad/monad.conf
-$ $EDITOR ~/.btcwallet/btcwallet.conf
+$ $EDITOR ~/.monawallet/monawallet.conf
 ```
 
 ## Issue Tracker
