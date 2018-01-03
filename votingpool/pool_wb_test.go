@@ -9,8 +9,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/roasbeef/btcutil/hdkeychain"
-	"github.com/roasbeef/btcwallet/waddrmgr"
+	"github.com/wakiyamap/monautil/hdkeychain"
+	"github.com/wakiyamap/monawallet/waddrmgr"
 )
 
 func TestPoolEnsureUsedAddr(t *testing.T) {

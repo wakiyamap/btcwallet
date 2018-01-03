@@ -19,9 +19,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/roasbeef/btcd/btcjson"
-	"github.com/roasbeef/btcwallet/chain"
-	"github.com/roasbeef/btcwallet/wallet"
+	"github.com/wakiyamap/monad/btcjson"
+	"github.com/wakiyamap/monawallet/chain"
+	"github.com/wakiyamap/monawallet/wallet"
 	"github.com/btcsuite/websocket"
 )
 
@@ -266,7 +266,7 @@ func (s *Server) SetChainServer(chainClient chain.Interface) {
 
 // handlerClosure creates a closure function for handling requests of the given
 // method.  This may be a request that is handled directly by btcwallet, or
-// a chain server request that is handled by passing the request down to btcd.
+// a chain server request that is handled by passing the request down to monad.
 //
 // NOTE: These handlers do not handle special cases, such as the authenticate
 // method.  Each of these must be checked beforehand (the method is already

@@ -6,9 +6,9 @@
 package wallet
 
 import (
-	"github.com/roasbeef/btcd/txscript"
-	"github.com/roasbeef/btcd/wire"
-	"github.com/roasbeef/btcwallet/walletdb"
+	"github.com/wakiyamap/monad/txscript"
+	"github.com/wakiyamap/monad/wire"
+	"github.com/wakiyamap/monawallet/walletdb"
 )
 
 // OutputSelectionPolicy describes the rules for selecting an output from the

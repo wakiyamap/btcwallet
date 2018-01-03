@@ -15,10 +15,10 @@ import (
 	"sync"
 
 	"github.com/lightninglabs/neutrino"
-	"github.com/roasbeef/btcwallet/chain"
-	"github.com/roasbeef/btcwallet/rpc/legacyrpc"
-	"github.com/roasbeef/btcwallet/wallet"
-	"github.com/roasbeef/btcwallet/walletdb"
+	"github.com/wakiyamap/monawallet/chain"
+	"github.com/wakiyamap/monawallet/rpc/legacyrpc"
+	"github.com/wakiyamap/monawallet/wallet"
+	"github.com/wakiyamap/monawallet/walletdb"
 )
 
 var (
@@ -258,7 +258,7 @@ func readCAFile() []byte {
 	return certs
 }
 
-// startChainRPC opens a RPC client connection to a btcd server for blockchain
+// startChainRPC opens a RPC client connection to a monad server for blockchain
 // services.  This function uses the RPC options from the global config and
 // there is no recovery in case the server is not available or if there is an
 // authentication error.  Instead, all requests to the client will simply error.

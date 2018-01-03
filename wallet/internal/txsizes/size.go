@@ -5,9 +5,9 @@
 package txsizes
 
 import (
-	"github.com/roasbeef/btcd/wire"
+	"github.com/wakiyamap/monad/wire"
 
-	h "github.com/roasbeef/btcwallet/internal/helpers"
+	h "github.com/wakiyamap/monawallet/internal/helpers"
 )
 
 // Worst case script and input/output size estimates.

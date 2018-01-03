@@ -10,10 +10,10 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/roasbeef/btcd/chaincfg"
-	"github.com/roasbeef/btcwallet/internal/prompt"
-	"github.com/roasbeef/btcwallet/waddrmgr"
-	"github.com/roasbeef/btcwallet/walletdb"
+	"github.com/wakiyamap/monad/chaincfg"
+	"github.com/wakiyamap/monawallet/internal/prompt"
+	"github.com/wakiyamap/monawallet/waddrmgr"
+	"github.com/wakiyamap/monawallet/walletdb"
 )
 
 const (

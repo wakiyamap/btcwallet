@@ -8,16 +8,16 @@ package wtxmgr
 import (
 	"fmt"
 
-	"github.com/roasbeef/btcd/chaincfg/chainhash"
-	"github.com/roasbeef/btcutil"
-	"github.com/roasbeef/btcwallet/walletdb"
+	"github.com/wakiyamap/monad/chaincfg/chainhash"
+	"github.com/wakiyamap/monautil"
+	"github.com/wakiyamap/monawallet/walletdb"
 )
 
 // CreditRecord contains metadata regarding a transaction credit for a known
 // transaction.  Further details may be looked up by indexing a wire.MsgTx.TxOut
 // with the Index field.
 type CreditRecord struct {
-	Amount btcutil.Amount
+	Amount monautil.Amount
 	Index  uint32
 	Spent  bool
 	Change bool
@@ -27,7 +27,7 @@ type CreditRecord struct {
 // transaction.  Further details may be looked up by indexing a wire.MsgTx.TxIn
 // with the Index field.
 type DebitRecord struct {
-	Amount btcutil.Amount
+	Amount monautil.Amount
 	Index  uint32
 }
 

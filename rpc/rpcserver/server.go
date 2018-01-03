@@ -8,11 +8,11 @@
 // Full documentation of the API implemented by this package is maintained in a
 // language-agnostic document:
 //
-//   https://github.com/roasbeef/btcwallet/blob/master/rpc/documentation/api.md
+//   https://github.com/wakiyamap/monawallet/blob/master/rpc/documentation/api.md
 //
 // Any API changes must be performed according to the steps listed here:
 //
-//   https://github.com/roasbeef/btcwallet/blob/master/rpc/documentation/serverchanges.md
+//   https://github.com/wakiyamap/monawallet/blob/master/rpc/documentation/serverchanges.md
 package rpcserver
 
 import (
@@ -25,20 +25,20 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 
-	"github.com/roasbeef/btcd/chaincfg/chainhash"
-	"github.com/roasbeef/btcd/rpcclient"
-	"github.com/roasbeef/btcd/txscript"
-	"github.com/roasbeef/btcd/wire"
-	"github.com/roasbeef/btcutil"
-	"github.com/roasbeef/btcutil/hdkeychain"
-	"github.com/roasbeef/btcwallet/chain"
-	"github.com/roasbeef/btcwallet/internal/cfgutil"
-	"github.com/roasbeef/btcwallet/internal/zero"
-	"github.com/roasbeef/btcwallet/netparams"
-	pb "github.com/roasbeef/btcwallet/rpc/walletrpc"
-	"github.com/roasbeef/btcwallet/waddrmgr"
-	"github.com/roasbeef/btcwallet/wallet"
-	"github.com/roasbeef/btcwallet/walletdb"
+	"github.com/wakiyamap/monad/chaincfg/chainhash"
+	"github.com/wakiyamap/monad/rpcclient"
+	"github.com/wakiyamap/monad/txscript"
+	"github.com/wakiyamap/monad/wire"
+	"github.com/wakiyamap/monautil"
+	"github.com/wakiyamap/monautil/hdkeychain"
+	"github.com/wakiyamap/monawallet/chain"
+	"github.com/wakiyamap/monawallet/internal/cfgutil"
+	"github.com/wakiyamap/monawallet/internal/zero"
+	"github.com/wakiyamap/monawallet/netparams"
+	pb "github.com/wakiyamap/monawallet/rpc/walletrpc"
+	"github.com/wakiyamap/monawallet/waddrmgr"
+	"github.com/wakiyamap/monawallet/wallet"
+	"github.com/wakiyamap/monawallet/walletdb"
 )
 
 // Public API version constants
@@ -108,7 +108,7 @@ type walletServer struct {
 }
 
 // loaderServer provides RPC clients with the ability to load and close wallets,
-// as well as establishing a RPC connection to a btcd consensus server.
+// as well as establishing a RPC connection to a monad consensus server.
 type loaderServer struct {
 	loader    *wallet.Loader
 	activeNet *netparams.Params
@@ -226,7 +226,7 @@ func (s *walletServer) NextAddress(ctx context.Context, req *pb.NextAddressReque
 	*pb.NextAddressResponse, error) {
 
 	var (
-		addr btcutil.Address
+		addr monautil.Address
 		err  error
 	)
 	switch req.Kind {
@@ -249,7 +249,7 @@ func (s *walletServer) ImportPrivateKey(ctx context.Context, req *pb.ImportPriva
 
 	defer zero.Bytes(req.Passphrase)
 
-	wif, err := btcutil.DecodeWIF(req.PrivateKeyWif)
+	wif, err := monautil.DecodeWIF(req.PrivateKeyWif)
 	if err != nil {
 		return nil, grpc.Errorf(codes.InvalidArgument,
 			"Invalid WIF-encoded private key: %v", err)
@@ -330,7 +330,7 @@ func (s *walletServer) FundTransaction(ctx context.Context, req *pb.FundTransact
 	}
 
 	selectedOutputs := make([]*pb.FundTransactionResponse_PreviousOutput, 0, len(unspentOutputs))
-	var totalAmount btcutil.Amount
+	var totalAmount monautil.Amount
 	for _, output := range unspentOutputs {
 		selectedOutputs = append(selectedOutputs, &pb.FundTransactionResponse_PreviousOutput{
 			TransactionHash: output.OutPoint.Hash[:],
@@ -340,15 +340,15 @@ func (s *walletServer) FundTransaction(ctx context.Context, req *pb.FundTransact
 			ReceiveTime:     output.ReceiveTime.Unix(),
 			FromCoinbase:    output.OutputKind == wallet.OutputKindCoinbase,
 		})
-		totalAmount += btcutil.Amount(output.Output.Value)
+		totalAmount += monautil.Amount(output.Output.Value)
 
-		if req.TargetAmount != 0 && totalAmount > btcutil.Amount(req.TargetAmount) {
+		if req.TargetAmount != 0 && totalAmount > monautil.Amount(req.TargetAmount) {
 			break
 		}
 	}
 
 	var changeScript []byte
-	if req.IncludeChangeScript && totalAmount > btcutil.Amount(req.TargetAmount) {
+	if req.IncludeChangeScript && totalAmount > monautil.Amount(req.TargetAmount) {
 		changeAddr, err := s.wallet.NewChangeAddress(req.Account, waddrmgr.PubKeyHash)
 		if err != nil {
 			return nil, translateError(err)
@@ -504,7 +504,7 @@ func (s *walletServer) SignTransaction(ctx context.Context, req *pb.SignTransact
 
 // BUGS:
 // - The transaction is not inspected to be relevant before publishing using
-//   sendrawtransaction, so connection errors to btcd could result in the tx
+//   sendrawtransaction, so connection errors to monad could result in the tx
 //   never being added to the wallet database.
 // - Once the above bug is fixed, wallet will require a way to purge invalid
 //   transactions from the database when they are rejected by the network, other

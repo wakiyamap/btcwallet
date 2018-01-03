@@ -1,11 +1,11 @@
 btcwallet
 =========
 
-[![Build Status](https://travis-ci.org/roasbeef/btcwallet.png?branch=master)](https://travis-ci.org/roasbeef/btcwallet)
+[![Build Status](https://travis-ci.org/wakiyamap/monawallet.png?branch=master)](https://travis-ci.org/wakiyamap/monawallet)
 [![Build status](https://ci.appveyor.com/api/projects/status/88nxvckdj8upqr36/branch/master?svg=true)](https://ci.appveyor.com/project/jrick/btcwallet/branch/master)
 
 btcwallet is a daemon handling bitcoin wallet functionality for a
-single user.  It acts as both an RPC client to btcd and an RPC server
+single user.  It acts as both an RPC client to monad and an RPC server
 for wallet clients and legacy RPC applications.
 
 Public and private keys are derived using the hierarchical
@@ -28,10 +28,10 @@ and therefore know your exact balance.  In a future release, public data
 encryption will extend to transactions as well.
 
 btcwallet is not an SPV client and requires connecting to a local or
-remote btcd instance for asynchronous blockchain queries and
-notifications over websockets.  Full btcd installation instructions
-can be found [here](https://github.com/roasbeef/btcd).  An alternative
-SPV mode that is compatible with btcd and Bitcoin Core is planned for
+remote monad instance for asynchronous blockchain queries and
+notifications over websockets.  Full monad installation instructions
+can be found [here](https://github.com/wakiyamap/monad).  An alternative
+SPV mode that is compatible with monad and Bitcoin Core is planned for
 a future release.
 
 Wallet clients can use one of two RPC servers:
@@ -60,9 +60,9 @@ Wallet clients can use one of two RPC servers:
 
 Install the latest MSIs available here:
 
-https://github.com/roasbeef/btcd/releases
+https://github.com/wakiyamap/monad/releases
 
-https://github.com/roasbeef/btcwallet/releases
+https://github.com/wakiyamap/monawallet/releases
 
 ### Windows/Linux/BSD/POSIX - Build from source
 
@@ -96,8 +96,8 @@ For a first time installation, the project and dependency sources can be
 obtained manually with `git` and `glide` (create directories as needed):
 
 ```
-git clone https://github.com/roasbeef/btcwallet $GOPATH/src/github.com/roasbeef/btcwallet
-cd $GOPATH/src/github.com/roasbeef/btcwallet
+git clone https://github.com/wakiyamap/monawallet $GOPATH/src/github.com/wakiyamap/monawallet
+cd $GOPATH/src/github.com/wakiyamap/monawallet
 glide install
 ```
 
@@ -105,7 +105,7 @@ To update an existing source tree, pull the latest changes and install the
 matching dependencies:
 
 ```
-cd $GOPATH/src/github.com/roasbeef/btcwallet
+cd $GOPATH/src/github.com/wakiyamap/monawallet
 git pull
 glide install
 ```
@@ -139,13 +139,13 @@ go build
 ## Getting Started
 
 The following instructions detail how to get started with btcwallet connecting
-to a localhost btcd.  Commands should be run in `cmd.exe` or PowerShell on
+to a localhost monad.  Commands should be run in `cmd.exe` or PowerShell on
 Windows, or any terminal emulator on *nix.
 
-- Run the following command to start btcd:
+- Run the following command to start monad:
 
 ```
-btcd -u rpcuser -P rpcpass
+monad -u rpcuser -P rpcpass
 ```
 
 - Run the following command to create a wallet:
@@ -161,36 +161,36 @@ btcwallet -u rpcuser -P rpcpass
 ```
 
 If everything appears to be working, it is recommended at this point to
-copy the sample btcd and btcwallet configurations and update with your
+copy the sample monad and btcwallet configurations and update with your
 RPC username and password.
 
 PowerShell (Installed from MSI):
 ```
-PS> cp "$env:ProgramFiles\Btcd Suite\Btcd\sample-btcd.conf" $env:LOCALAPPDATA\Btcd\btcd.conf
+PS> cp "$env:ProgramFiles\Btcd Suite\Btcd\sample-monad.conf" $env:LOCALAPPDATA\Btcd\monad.conf
 PS> cp "$env:ProgramFiles\Btcd Suite\Btcwallet\sample-btcwallet.conf" $env:LOCALAPPDATA\Btcwallet\btcwallet.conf
-PS> $editor $env:LOCALAPPDATA\Btcd\btcd.conf
+PS> $editor $env:LOCALAPPDATA\Btcd\monad.conf
 PS> $editor $env:LOCALAPPDATA\Btcwallet\btcwallet.conf
 ```
 
 PowerShell (Installed from source):
 ```
-PS> cp $env:GOPATH\src\github.com\btcsuite\btcd\sample-btcd.conf $env:LOCALAPPDATA\Btcd\btcd.conf
+PS> cp $env:GOPATH\src\github.com\btcsuite\monad\sample-monad.conf $env:LOCALAPPDATA\Btcd\monad.conf
 PS> cp $env:GOPATH\src\github.com\btcsuite\btcwallet\sample-btcwallet.conf $env:LOCALAPPDATA\Btcwallet\btcwallet.conf
-PS> $editor $env:LOCALAPPDATA\Btcd\btcd.conf
+PS> $editor $env:LOCALAPPDATA\Btcd\monad.conf
 PS> $editor $env:LOCALAPPDATA\Btcwallet\btcwallet.conf
 ```
 
 Linux/BSD/POSIX (Installed from source):
 ```bash
-$ cp $GOPATH/src/github.com/roasbeef/btcd/sample-btcd.conf ~/.btcd/btcd.conf
-$ cp $GOPATH/src/github.com/roasbeef/btcwallet/sample-btcwallet.conf ~/.btcwallet/btcwallet.conf
-$ $EDITOR ~/.btcd/btcd.conf
+$ cp $GOPATH/src/github.com/wakiyamap/monad/sample-monad.conf ~/.monad/monad.conf
+$ cp $GOPATH/src/github.com/wakiyamap/monawallet/sample-btcwallet.conf ~/.btcwallet/btcwallet.conf
+$ $EDITOR ~/.monad/monad.conf
 $ $EDITOR ~/.btcwallet/btcwallet.conf
 ```
 
 ## Issue Tracker
 
-The [integrated github issue tracker](https://github.com/roasbeef/btcwallet/issues)
+The [integrated github issue tracker](https://github.com/wakiyamap/monawallet/issues)
 is used for this project.
 
 ## GPG Verification Key

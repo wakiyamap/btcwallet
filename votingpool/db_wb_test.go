@@ -9,7 +9,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/roasbeef/btcwallet/walletdb"
+	"github.com/wakiyamap/monawallet/walletdb"
 )
 
 func TestPutUsedAddrHash(t *testing.T) {

@@ -52,15 +52,15 @@ import (
 	"fmt"
 	"path/filepath"
 
-	pb "github.com/roasbeef/btcwallet/rpc/walletrpc"
+	pb "github.com/wakiyamap/monawallet/rpc/walletrpc"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 
-	"github.com/btcsuite/btcutil"
+	"github.com/btcsuite/monautil"
 )
 
-var certificateFile = filepath.Join(btcutil.AppDataDir("btcwallet", false), "rpc.cert")
+var certificateFile = filepath.Join(monautil.AppDataDir("btcwallet", false), "rpc.cert")
 
 func main() {
 	creds, err := credentials.NewClientTLSFromFile(certificateFile, "localhost")
@@ -86,7 +86,7 @@ func main() {
 		return
 	}
 
-	fmt.Println("Spendable balance: ", btcutil.Amount(balanceResponse.Spendable))
+	fmt.Println("Spendable balance: ", monautil.Amount(balanceResponse.Spendable))
 }
 ```
 
@@ -394,7 +394,7 @@ Full instructions for this procedure can be found
 Generate Python stubs from the `.proto`:
 
 ```bash
-$ protoc -I /path/to/roasbeef/btcwallet/rpc --python_out=. --grpc_out=. \
+$ protoc -I /path/to/wakiyamap/monawallet/rpc --python_out=. --grpc_out=. \
   --plugin=protoc-gen-grpc=$(which grpc_python_plugin) \
   /path/to/btcwallet/rpc/api.proto
 ```

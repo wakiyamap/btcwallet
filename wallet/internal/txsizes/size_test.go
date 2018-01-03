@@ -3,8 +3,8 @@ package txsizes_test
 import (
 	"testing"
 
-	"github.com/roasbeef/btcd/wire"
-	. "github.com/roasbeef/btcwallet/wallet/internal/txsizes"
+	"github.com/wakiyamap/monad/wire"
+	. "github.com/wakiyamap/monawallet/wallet/internal/txsizes"
 )
 
 const (

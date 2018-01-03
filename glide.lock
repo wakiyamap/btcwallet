@@ -44,7 +44,7 @@ imports:
   subpackages:
   - filterdb
   - headerfs
-- name: github.com/roasbeef/btcd
+- name: github.com/wakiyamap/monad
   version: 5d9e4e1fa749fa2f1675802a4c9f10ef0ada04d1
   subpackages:
   - addrmgr
@@ -59,7 +59,7 @@ imports:
   - rpcclient
   - txscript
   - wire
-- name: github.com/roasbeef/btcutil
+- name: github.com/wakiyamap/monautil
   version: c3ff179366044979fb9856c2feb79bd4c2184c7a
   subpackages:
   - base58

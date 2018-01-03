@@ -3,15 +3,15 @@ package chain
 import (
 	"time"
 
-	"github.com/roasbeef/btcd/chaincfg/chainhash"
-	"github.com/roasbeef/btcd/wire"
-	"github.com/roasbeef/btcutil"
-	"github.com/roasbeef/btcwallet/waddrmgr"
-	"github.com/roasbeef/btcwallet/wtxmgr"
+	"github.com/wakiyamap/monad/chaincfg/chainhash"
+	"github.com/wakiyamap/monad/wire"
+	"github.com/wakiyamap/monautil"
+	"github.com/wakiyamap/monawallet/waddrmgr"
+	"github.com/wakiyamap/monawallet/wtxmgr"
 )
 
 // Interface allows more than one backing blockchain source, such as a
-// btcd RPC chain server, or an SPV library, as long as we write a driver for
+// monad RPC chain server, or an SPV library, as long as we write a driver for
 // it.
 type Interface interface {
 	Start() error
@@ -23,8 +23,8 @@ type Interface interface {
 	GetBlockHeader(*chainhash.Hash) (*wire.BlockHeader, error)
 	BlockStamp() (*waddrmgr.BlockStamp, error)
 	SendRawTransaction(*wire.MsgTx, bool) (*chainhash.Hash, error)
-	Rescan(*chainhash.Hash, []btcutil.Address, []*wire.OutPoint) error
-	NotifyReceived([]btcutil.Address) error
+	Rescan(*chainhash.Hash, []monautil.Address, []*wire.OutPoint) error
+	NotifyReceived([]monautil.Address) error
 	NotifyBlocks() error
 	Notifications() <-chan interface{}
 }

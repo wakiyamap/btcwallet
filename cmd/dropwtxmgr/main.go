@@ -12,15 +12,15 @@ import (
 	"path/filepath"
 
 	"github.com/jessevdk/go-flags"
-	"github.com/roasbeef/btcutil"
-	"github.com/roasbeef/btcwallet/walletdb"
-	_ "github.com/roasbeef/btcwallet/walletdb/bdb"
-	"github.com/roasbeef/btcwallet/wtxmgr"
+	"github.com/wakiyamap/monautil"
+	"github.com/wakiyamap/monawallet/walletdb"
+	_ "github.com/wakiyamap/monawallet/walletdb/bdb"
+	"github.com/wakiyamap/monawallet/wtxmgr"
 )
 
 const defaultNet = "mainnet"
 
-var datadir = btcutil.AppDataDir("btcwallet", false)
+var datadir = monautil.AppDataDir("btcwallet", false)
 
 // Flags.
 var opts = struct {
