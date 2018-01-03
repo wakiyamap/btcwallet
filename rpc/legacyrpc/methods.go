@@ -118,7 +118,7 @@ var rpcHandlers = map[string]struct {
 	"importwallet":         {handler: unimplemented, noHelp: true},
 	"listaddressgroupings": {handler: unimplemented, noHelp: true},
 
-	// Reference methods which can't be implemented by btcwallet due to
+	// Reference methods which can't be implemented by monawallet due to
 	// design decision differences
 	"encryptwallet": {handler: unsupported, noHelp: true},
 	"move":          {handler: unsupported, noHelp: true},
@@ -148,11 +148,11 @@ func unimplemented(interface{}, *wallet.Wallet) (interface{}, error) {
 }
 
 // unsupported handles a standard bitcoind RPC request which is
-// unsupported by btcwallet due to design differences.
+// unsupported by monawallet due to design differences.
 func unsupported(interface{}, *wallet.Wallet) (interface{}, error) {
 	return nil, &btcjson.RPCError{
 		Code:    -1,
-		Message: "Request unsupported by btcwallet",
+		Message: "Request unsupported by monawallet",
 	}
 }
 
@@ -487,7 +487,7 @@ func getBlockCount(icmd interface{}, w *wallet.Wallet) (interface{}, error) {
 }
 
 // getInfo handles a getinfo request by returning the a structure containing
-// information about the current state of btcwallet.
+// information about the current state of monawallet.
 // exist.
 func getInfo(icmd interface{}, w *wallet.Wallet, chainClient *chain.RPCClient) (interface{}, error) {
 	// Call down to monad for all of the information in this command known

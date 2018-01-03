@@ -1,5 +1,5 @@
 ============================================================================
-User visible changes for btcwallet
+User visible changes for monawallet
   A wallet daemon for monad, written in Go
 ============================================================================
 
@@ -51,7 +51,7 @@ Changes in 0.6.0 (Wed May 27 2015)
       - RPC requests with an unspecified account that default to the unnamed
         account in Bitcoin Core Wallet default to "default", the name of the
         initial account
-      - Several RPCs with account parameters do not work with btcwallet
+      - Several RPCs with account parameters do not work with monawallet
         accounts due to concerns over expectations of API compatibility with
         Bitcoin Core Wallet.  A new RPC API is being planned to rectify this
         (#220).
@@ -293,17 +293,17 @@ Changes in 0.5.0 (Tue Mar 03 2015)
       - [debug] Log each transaction that is removed in a rollback
     - Only log rollbacks if transactions are reorged out of the old chain
     - Save logs to network-specific directories
-      (e.g. ~/.btcwallet/logs/testnet3) to match monad behavior (#114)
+      (e.g. ~/.monawallet/logs/testnet3) to match monad behavior (#114)
 
 Changes in 0.4.0 (Sun May 25 2014)
   - Implement the following standard bitcoin server RPC requests:
-    - signmessage (https://github.com/conformal/btcwallet/issues/58)
-    - verifymessage (https://github.com/conformal/btcwallet/issues/61)
-    - listunspent (https://github.com/conformal/btcwallet/issues/54)
-    - validateaddress (https://github.com/conformal/btcwallet/issues/60)
-    - addressmultisig (https://github.com/conformal/btcwallet/issues/37)
-    - createmultisig (https://github.com/conformal/btcwallet/issues/37)
-    - signrawtransaction (https://github.com/conformal/btcwallet/issues/59)
+    - signmessage (https://github.com/conformal/monawallet/issues/58)
+    - verifymessage (https://github.com/conformal/monawallet/issues/61)
+    - listunspent (https://github.com/conformal/monawallet/issues/54)
+    - validateaddress (https://github.com/conformal/monawallet/issues/60)
+    - addressmultisig (https://github.com/conformal/monawallet/issues/37)
+    - createmultisig (https://github.com/conformal/monawallet/issues/37)
+    - signrawtransaction (https://github.com/conformal/monawallet/issues/59)
 
   - Add authenticate extension RPC request to authenticate a websocket
     session without requiring the use of the HTTP Authorization header
@@ -327,14 +327,14 @@ Changes in 0.4.0 (Sun May 25 2014)
     to a length of 32
 
   - Fix rescan for transaction history for imported addresses
-    (https://github.com/conformal/btcwallet/issues/74)
+    (https://github.com/conformal/monawallet/issues/74)
 
   - Fix listsinceblock request handler to consider the minimum confirmation
-    parameter (https://github.com/conformal/btcwallet/issues/80)
+    parameter (https://github.com/conformal/monawallet/issues/80)
 
   - Fix several RPC handlers which require an unlocked wallet to check
     for an unlocked wallet before continuing
-    (https://github.com/conformal/btcwallet/issues/65)
+    (https://github.com/conformal/monawallet/issues/65)
 
   - Fix handling for block rewards (coinbase transactions):
     - Update listtransactions results to use "generate" category for
@@ -372,13 +372,13 @@ Changes in 0.4.0 (Sun May 25 2014)
 Changes in 0.3.0 (Mon Feb 10 2014)
   - Use correct hash algorithm for chained addresses (fixes a bug where
     address chaining was still deterministic, but forked from Armory and
-    previous btcwallet implementations)
+    previous monawallet implementations)
 
   - Change websocket endpoint to connect to monad 0.6.0-alpha
 
   - Redo server implementation to serialize handling of client requests
 
-  - Redo account locking to greatly reduce btcwallet lockups caused by
+  - Redo account locking to greatly reduce monawallet lockups caused by
     incorrect mutex usage
 
   - Open all accounts, rather than just the default account, at startup
@@ -392,13 +392,13 @@ Changes in 0.3.0 (Mon Feb 10 2014)
     the minimum fee to all outbound transactions
 
   - Implement the following standard bitcoin server RPC requests:
-    - getinfo (https://github.com/conformal/btcwallet/issues/63)
-    - getrawchangeaddress (https://github.com/conformal/btcwallet/issues/41)
-    - getreceivedbyaccount (https://github.com/conformal/btcwallet/issues/42)
-    - gettransaction (https://github.com/conformal/btcwallet/issues/44)
-    - keypoolrefill (https://github.com/conformal/btcwallet/issues/48)
-    - listsinceblock (https://github.com/conformal/btcwallet/issues/52)
-    - sendtoaddress (https://github.com/conformal/btcwallet/issues/56)
+    - getinfo (https://github.com/conformal/monawallet/issues/63)
+    - getrawchangeaddress (https://github.com/conformal/monawallet/issues/41)
+    - getreceivedbyaccount (https://github.com/conformal/monawallet/issues/42)
+    - gettransaction (https://github.com/conformal/monawallet/issues/44)
+    - keypoolrefill (https://github.com/conformal/monawallet/issues/48)
+    - listsinceblock (https://github.com/conformal/monawallet/issues/52)
+    - sendtoaddress (https://github.com/conformal/monawallet/issues/56)
 
   - Add empty (unimplemented) handlers for the following RPC requests so
     requests are not passed down to monad:
@@ -408,7 +408,7 @@ Changes in 0.3.0 (Mon Feb 10 2014)
 
   - Add RPC extension request, exportwatchingwallet, to export an account
     with a watching-only wallet from an account with a hot wallet that
-    may be used by a separate btcwallet instance
+    may be used by a separate monawallet instance
 
   - Require all account wallets to share the same passphrase
 
@@ -418,16 +418,16 @@ Changes in 0.3.0 (Mon Feb 10 2014)
   - Allow opening accounts with watching-only wallets
 
   - Return txid for sendfrom RPC requests
-    (https://github.com/conformal/btcwallet/issues/64)
+    (https://github.com/conformal/monawallet/issues/64)
 
   - Rescan imported private keys in background
-    (https://github.com/conformal/btcwallet/issues/34)
+    (https://github.com/conformal/monawallet/issues/34)
 
   - Do not import duplicate private keys
-    (https://github.com/conformal/btcwallet/issues/35)
+    (https://github.com/conformal/monawallet/issues/35)
 
   - Write all three account files for a new account, rather than just
-    the wallet (https://github.com/conformal/btcwallet/issues/30)
+    the wallet (https://github.com/conformal/monawallet/issues/30)
 
   - Create any missing directories before writing autogenerated certificate
     pair
@@ -446,7 +446,7 @@ Changes in 0.3.0 (Mon Feb 10 2014)
   - Fix typos in README file
 
 Changes in 0.2.1 (Thu Jan 10 2014)
-  - Fix a mutex issue which caused btcwallet to lockup on all
+  - Fix a mutex issue which caused monawallet to lockup on all
     RPC requests needing to read or write an account
 
 Changes in 0.2.0 (Thu Jan 09 2014)
@@ -455,7 +455,7 @@ Changes in 0.2.0 (Thu Jan 09 2014)
   - Don't hardcode localhost monad connections.  Instead, add a --connect
     option to specify the hostname or address and port of a local or
     remote monad instance
-    (https://github.com/conformal/btcwallet/issues/1)
+    (https://github.com/conformal/monawallet/issues/1)
 
   - Remove --serverport port and replace with --listen.  This option works
     just like monad's --rpclisten  and allows to specify the interfaces to
@@ -467,27 +467,27 @@ Changes in 0.2.0 (Thu Jan 09 2014)
   - Refill keypool if wallet is unlocked and keypool is emptied
 
   - Detect and rollback saved tx/utxo info after monad performs blockchain
-    reorganizations while btcwallet was disconnected
+    reorganizations while monawallet was disconnected
 
   - Add support for the following standard bitcoin JSON-RPC calls:
-    - dumpprivkey (https://github.com/conformal/btcwallet/issues/9)
+    - dumpprivkey (https://github.com/conformal/monawallet/issues/9)
     - getaccount
     - getaccountaddress
-    - importprivkey (https://github.com/conformal/btcwallet/issues/2)
-    - listtransactions (https://github.com/conformal/btcwallet/issues/12)
+    - importprivkey (https://github.com/conformal/monawallet/issues/2)
+    - listtransactions (https://github.com/conformal/monawallet/issues/12)
 
   - Add several extension RPC calls for websocket connections:
     - getaddressbalance: get the balance associated with a single address
     - getunconfirmedbalance: get total balance for unconfirmed transactions
     - listaddresstransactions: list transactions for a single address
-      (https://github.com/conformal/btcwallet/issues/27)
+      (https://github.com/conformal/monawallet/issues/27)
     - listalltransactions: lists all transactions without specifying a range
 
   - Make RPC extensions available only to websocket connections, with the
     exception of createencryptedwallet
 
   - Add dummy handlers for unimplemented wallet RPC calls
-    (https://github.com/conformal/btcwallet/issues/29)
+    (https://github.com/conformal/monawallet/issues/29)
 
   - Add socks5/tor proxy support
 
@@ -495,11 +495,11 @@ Changes in 0.2.0 (Thu Jan 09 2014)
 
   - Use OS-specific rename calls to provide atomic file renames which
     can replace a currently-existing file
-    (https://github.com/conformal/btcwallet/issues/20)
+    (https://github.com/conformal/monawallet/issues/20)
 
   - Move account files to a single directory per bitcoin network to
     prevent a future scaling issue
-    (https://github.com/conformal/btcwallet/issues/16)
+    (https://github.com/conformal/monawallet/issues/16)
 
   - Fix several data races and mutex mishandling
 
@@ -507,10 +507,10 @@ Changes in 0.2.0 (Thu Jan 09 2014)
     when a monad connection was never established
 
   - Fix a bug where creating account files did not create all necessary
-    directories (https://github.com/conformal/btcwallet/issues/15)
+    directories (https://github.com/conformal/monawallet/issues/15)
 
   - Fix a bug where '~' did not expand to a home or user directory
-    (https://github.com/conformal/btcwallet/issues/17)
+    (https://github.com/conformal/monawallet/issues/17)
 
   - Fix a bug where returning account names as strings did not remove
     trailing ending 0s

@@ -81,7 +81,7 @@ type Server struct {
 
 // jsonAuthFail sends a message back to the client if the http auth is rejected.
 func jsonAuthFail(w http.ResponseWriter) {
-	w.Header().Add("WWW-Authenticate", `Basic realm="btcwallet RPC"`)
+	w.Header().Add("WWW-Authenticate", `Basic realm="monawallet RPC"`)
 	http.Error(w, "401 Unauthorized.", http.StatusUnauthorized)
 }
 
@@ -265,7 +265,7 @@ func (s *Server) SetChainServer(chainClient chain.Interface) {
 }
 
 // handlerClosure creates a closure function for handling requests of the given
-// method.  This may be a request that is handled directly by btcwallet, or
+// method.  This may be a request that is handled directly by monawallet, or
 // a chain server request that is handled by passing the request down to monad.
 //
 // NOTE: These handlers do not handle special cases, such as the authenticate
@@ -462,7 +462,7 @@ out:
 			switch req.Method {
 			case "stop":
 				resp := makeResponse(req.ID,
-					"btcwallet stopping.", nil)
+					"monawallet stopping.", nil)
 				mresp, err := json.Marshal(resp)
 				// Expected to never fail.
 				if err != nil {
@@ -606,7 +606,7 @@ func (s *Server) postClientRPC(w http.ResponseWriter, r *http.Request) {
 		return
 	case "stop":
 		stop = true
-		res = "btcwallet stopping"
+		res = "monawallet stopping"
 	default:
 		res, jsonErr = s.handlerClosure(&req)()
 	}

@@ -2539,7 +2539,7 @@ func (w *Wallet) ChainParams() *chaincfg.Params {
 }
 
 // Database returns the underlying walletdb database. This method is provided
-// in order to allow applications wrapping btcwallet to store app-specific data
+// in order to allow applications wrapping monawallet to store app-specific data
 // with the wallet's database.
 func (w *Wallet) Database() walletdb.DB {
 	return w.db

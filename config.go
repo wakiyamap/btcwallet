@@ -26,10 +26,10 @@ import (
 
 const (
 	defaultCAFilename       = "monad.cert"
-	defaultConfigFilename   = "btcwallet.conf"
+	defaultConfigFilename   = "monawallet.conf"
 	defaultLogLevel         = "info"
 	defaultLogDirname       = "logs"
-	defaultLogFilename      = "btcwallet.log"
+	defaultLogFilename      = "monawallet.log"
 	defaultRPCMaxClients    = 10
 	defaultRPCMaxWebsockets = 25
 
@@ -38,7 +38,7 @@ const (
 
 var (
 	monadDefaultCAFile  = filepath.Join(monautil.AppDataDir("monad", false), "rpc.cert")
-	defaultAppDataDir  = monautil.AppDataDir("btcwallet", false)
+	defaultAppDataDir  = monautil.AppDataDir("monawallet", false)
 	defaultConfigFile  = filepath.Join(defaultAppDataDir, defaultConfigFilename)
 	defaultRPCKeyFile  = filepath.Join(defaultAppDataDir, "rpc.key")
 	defaultRPCCertFile = filepath.Join(defaultAppDataDir, "rpc.cert")
@@ -250,7 +250,7 @@ func parseAndSetDebugLevels(debugLevel string) error {
 //      3) Load configuration file overwriting defaults with any specified options
 //      4) Parse CLI options and overwrite/add any specified options
 //
-// The above results in btcwallet functioning properly without any config
+// The above results in monawallet functioning properly without any config
 // settings while still allowing the user to override settings with config files
 // and command line options.  Command line options always take precedence.
 func loadConfig() (*config, []string, error) {

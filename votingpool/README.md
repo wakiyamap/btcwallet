@@ -4,7 +4,7 @@ votingpool
 [![Build Status](https://travis-ci.org/wakiyamap/monawallet.png?branch=master)]
 (https://travis-ci.org/wakiyamap/monawallet)
 
-Package votingpool provides voting pool functionality for btcwallet as
+Package votingpool provides voting pool functionality for monawallet as
 described here:
 [Voting Pools](http://opentransactions.org/wiki/index.php?title=Category:Voting_Pools).
 

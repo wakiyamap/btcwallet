@@ -20,7 +20,7 @@ import (
 
 const defaultNet = "mainnet"
 
-var datadir = monautil.AppDataDir("btcwallet", false)
+var datadir = monautil.AppDataDir("monawallet", false)
 
 // Flags.
 var opts = struct {
@@ -81,7 +81,7 @@ func mainInt() int {
 	}
 
 	for !opts.Force {
-		fmt.Print("Drop all btcwallet transaction history? [y/N] ")
+		fmt.Print("Drop all monawallet transaction history? [y/N] ")
 
 		scanner := bufio.NewScanner(bufio.NewReader(os.Stdin))
 		if !scanner.Scan() {

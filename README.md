@@ -1,10 +1,10 @@
-btcwallet
+monawallet
 =========
 
 [![Build Status](https://travis-ci.org/wakiyamap/monawallet.png?branch=master)](https://travis-ci.org/wakiyamap/monawallet)
-[![Build status](https://ci.appveyor.com/api/projects/status/88nxvckdj8upqr36/branch/master?svg=true)](https://ci.appveyor.com/project/jrick/btcwallet/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/88nxvckdj8upqr36/branch/master?svg=true)](https://ci.appveyor.com/project/jrick/monawallet/branch/master)
 
-btcwallet is a daemon handling bitcoin wallet functionality for a
+monawallet is a daemon handling bitcoin wallet functionality for a
 single user.  It acts as both an RPC client to monad and an RPC server
 for wallet clients and legacy RPC applications.
 
@@ -12,13 +12,13 @@ Public and private keys are derived using the hierarchical
 deterministic format described by
 [BIP0032](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki).
 Unencrypted private keys are not supported and are never written to
-disk.  btcwallet uses the
+disk.  monawallet uses the
 `m/44'/<coin type>'/<account>'/<branch>/<address index>`
 HD path for all derived addresses, as described by
 [BIP0044](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki).
 
 Due to the sensitive nature of public data in a BIP0032 wallet,
-btcwallet provides the option of encrypting not just private keys, but
+monawallet provides the option of encrypting not just private keys, but
 public data as well.  This is intended to thwart privacy risks where a
 wallet file is compromised without exposing all current and future
 addresses (public keys) managed by the wallet. While access to this
@@ -27,7 +27,7 @@ does mean they could track all transactions involving your addresses
 and therefore know your exact balance.  In a future release, public data
 encryption will extend to transactions as well.
 
-btcwallet is not an SPV client and requires connecting to a local or
+monawallet is not an SPV client and requires connecting to a local or
 remote monad instance for asynchronous blockchain queries and
 notifications over websockets.  Full monad installation instructions
 can be found [here](https://github.com/wakiyamap/monad).  An alternative
@@ -47,7 +47,7 @@ Wallet clients can use one of two RPC servers:
 
   2. An experimental gRPC server
 
-     The gRPC server uses a new API built for btcwallet, but the API is not
+     The gRPC server uses a new API built for monawallet, but the API is not
      stabilized and the server is feature gated behind a config option
      (`--experimentalrpclisten`).  If you don't mind applications breaking due
      to API changes, don't want to deal with issues of the legacy API, or need
@@ -113,10 +113,10 @@ glide install
 **Building/Installing**:
 
 The `go` tool is used to build or install (to `GOPATH`) the project.  Some
-example build instructions are provided below (all must run from the `btcwallet`
+example build instructions are provided below (all must run from the `monawallet`
 project directory).
 
-To build and install `btcwallet` and all helper commands (in the `cmd`
+To build and install `monawallet` and all helper commands (in the `cmd`
 directory) to `$GOPATH/bin/`, as well as installing all compiled packages to
 `$GOPATH/pkg/` (**use this if you are unsure which command to run**):
 
@@ -124,13 +124,13 @@ directory) to `$GOPATH/bin/`, as well as installing all compiled packages to
 go install . ./cmd/...
 ```
 
-To build a `btcwallet` executable and install it to `$GOPATH/bin/`:
+To build a `monawallet` executable and install it to `$GOPATH/bin/`:
 
 ```
 go install
 ```
 
-To build a `btcwallet` executable and place it in the current directory:
+To build a `monawallet` executable and place it in the current directory:
 
 ```
 go build
@@ -138,7 +138,7 @@ go build
 
 ## Getting Started
 
-The following instructions detail how to get started with btcwallet connecting
+The following instructions detail how to get started with monawallet connecting
 to a localhost monad.  Commands should be run in `cmd.exe` or PowerShell on
 Windows, or any terminal emulator on *nix.
 
@@ -151,39 +151,39 @@ monad -u rpcuser -P rpcpass
 - Run the following command to create a wallet:
 
 ```
-btcwallet -u rpcuser -P rpcpass --create
+monawallet -u rpcuser -P rpcpass --create
 ```
 
-- Run the following command to start btcwallet:
+- Run the following command to start monawallet:
 
 ```
-btcwallet -u rpcuser -P rpcpass
+monawallet -u rpcuser -P rpcpass
 ```
 
 If everything appears to be working, it is recommended at this point to
-copy the sample monad and btcwallet configurations and update with your
+copy the sample monad and monawallet configurations and update with your
 RPC username and password.
 
 PowerShell (Installed from MSI):
 ```
-PS> cp "$env:ProgramFiles\Btcd Suite\Btcd\sample-monad.conf" $env:LOCALAPPDATA\Btcd\monad.conf
-PS> cp "$env:ProgramFiles\Btcd Suite\Btcwallet\sample-btcwallet.conf" $env:LOCALAPPDATA\Btcwallet\btcwallet.conf
-PS> $editor $env:LOCALAPPDATA\Btcd\monad.conf
-PS> $editor $env:LOCALAPPDATA\Btcwallet\btcwallet.conf
+PS> cp "$env:ProgramFiles\Wakiyamap\Monad\sample-monad.conf" $env:LOCALAPPDATA\Wakiyamap\monad.conf
+PS> cp "$env:ProgramFiles\Wakiyamap\Monawallet\sample-monawallet.conf" $env:LOCALAPPDATA\Monawallet\monawallet.conf
+PS> $editor $env:LOCALAPPDATA\Monad\monad.conf
+PS> $editor $env:LOCALAPPDATA\Monawallet\monawallet.conf
 ```
 
 PowerShell (Installed from source):
 ```
-PS> cp $env:GOPATH\src\github.com\btcsuite\monad\sample-monad.conf $env:LOCALAPPDATA\Btcd\monad.conf
-PS> cp $env:GOPATH\src\github.com\btcsuite\btcwallet\sample-btcwallet.conf $env:LOCALAPPDATA\Btcwallet\btcwallet.conf
-PS> $editor $env:LOCALAPPDATA\Btcd\monad.conf
-PS> $editor $env:LOCALAPPDATA\Btcwallet\btcwallet.conf
+PS> cp $env:GOPATH\src\github.com\wakiyamap\monad\sample-monad.conf $env:LOCALAPPDATA\Btcd\monad.conf
+PS> cp $env:GOPATH\src\github.com\wakiyamap\monawallet\sample-monawallet.conf $env:LOCALAPPDATA\Monawallet\monawallet.conf
+PS> $editor $env:LOCALAPPDATA\Monad\monad.conf
+PS> $editor $env:LOCALAPPDATA\Monawallet\monawallet.conf
 ```
 
 Linux/BSD/POSIX (Installed from source):
 ```bash
 $ cp $GOPATH/src/github.com/wakiyamap/monad/sample-monad.conf ~/.monad/monad.conf
-$ cp $GOPATH/src/github.com/wakiyamap/monawallet/sample-btcwallet.conf ~/.monawallet/monawallet.conf
+$ cp $GOPATH/src/github.com/wakiyamap/monawallet/sample-monawallet.conf ~/.monawallet/monawallet.conf
 $ $EDITOR ~/.monad/monad.conf
 $ $EDITOR ~/.monawallet/monawallet.conf
 ```
@@ -215,4 +215,4 @@ verify the signature perform the following:
 
 ## License
 
-btcwallet is licensed under the liberal ISC License.
+monawallet is licensed under the liberal ISC License.

@@ -26,7 +26,7 @@ import (
 )
 
 var (
-	walletDataDirectory = monautil.AppDataDir("btcwallet", false)
+	walletDataDirectory = monautil.AppDataDir("monawallet", false)
 	newlineBytes        = []byte{'\n'}
 )
 

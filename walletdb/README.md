@@ -4,7 +4,7 @@ walletdb
 [![Build Status](https://travis-ci.org/wakiyamap/monawallet.png?branch=master)]
 (https://travis-ci.org/wakiyamap/monawallet)
 
-Package walletdb provides a namespaced database interface for btcwallet.
+Package walletdb provides a namespaced database interface for monawallet.
 
 A wallet essentially consists of a multitude of stored data such as private
 and public keys, key derivation bits, pay-to-script-hash scripts, and various

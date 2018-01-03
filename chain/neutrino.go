@@ -89,7 +89,7 @@ func (s *NeutrinoClient) WaitForShutdown() {
 func (s *NeutrinoClient) GetBlock(hash *chainhash.Hash) (*wire.MsgBlock, error) {
 	// TODO(roasbeef): add a block cache?
 	//  * which evication strategy? depends on use case
-	//  Should the block cache be INSIDE neutrino instead of in btcwallet?
+	//  Should the block cache be INSIDE neutrino instead of in monawallet?
 	block, err := s.CS.GetBlockFromNetwork(*hash)
 	if err != nil {
 		return nil, err
