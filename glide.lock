@@ -52,7 +52,7 @@ imports:
 - name: github.com/wakiyamap/lyra2rev2
   version: bae9ad2043bb55facb14c4918e909f88a7d3ed84
 - name: github.com/wakiyamap/monad
-  version: 19f7e97d0e3871832272db91bf83ca2c0623c8f4
+  version: 0df5f72d8c78c501057511f8095304c1b793e95c
   subpackages:
   - addrmgr
   - blockchain
@@ -75,7 +75,7 @@ imports:
   - gcs/builder
   - hdkeychain
 - name: github.com/wakiyamap/neutrino
-  version: 4bfb5b333ece9652850947d101b42d27a6d30b50
+  version: f7678891718f5506c95e8f6e8eb0ee3ab3454e6e
   subpackages:
   - filterdb
   - headerfs
