@@ -12,7 +12,7 @@ import (
 
 	"github.com/btcsuite/btclog"
 	"github.com/jrick/logrotate/rotator"
-	"github.com/lightninglabs/neutrino"
+	"github.com/wakiyamap/neutrino"
 	"github.com/wakiyamap/monad/rpcclient"
 	"github.com/wakiyamap/monawallet/chain"
 	"github.com/wakiyamap/monawallet/rpc/legacyrpc"

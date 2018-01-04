@@ -22,10 +22,10 @@ var MainNetParams = Params{
 	RPCServerPort: "8332",
 }
 
-// TestNet3Params contains parameters specific running monawallet and
-// monad on the test network (version 3) (wire.TestNet3).
-var TestNet3Params = Params{
-	Params:        &chaincfg.TestNet3Params,
+// TestNet4Params contains parameters specific running monawallet and
+// monad on the test network (version 3) (wire.TestNet4).
+var TestNet4Params = Params{
+	Params:        &chaincfg.TestNet4Params,
 	RPCClientPort: "18334",
 	RPCServerPort: "18332",
 }

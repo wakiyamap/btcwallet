@@ -14,7 +14,7 @@ import (
 	"runtime"
 	"sync"
 
-	"github.com/lightninglabs/neutrino"
+	"github.com/wakiyamap/neutrino"
 	"github.com/wakiyamap/monawallet/chain"
 	"github.com/wakiyamap/monawallet/rpc/legacyrpc"
 	"github.com/wakiyamap/monawallet/wallet"

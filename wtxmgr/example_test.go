@@ -188,7 +188,7 @@ func Example_basicUsage() {
 		fmt.Println(err)
 		return
 	}
-	s, err := wtxmgr.Open(b, &chaincfg.TestNet3Params)
+	s, err := wtxmgr.Open(b, &chaincfg.TestNet4Params)
 	if err != nil {
 		fmt.Println(err)
 		return

@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/lightninglabs/neutrino"
+	"github.com/wakiyamap/neutrino"
 	"github.com/wakiyamap/monad/chaincfg/chainhash"
 	"github.com/wakiyamap/monad/rpcclient"
 	"github.com/wakiyamap/monad/wire"
