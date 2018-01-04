@@ -67,7 +67,7 @@ imports:
   - txscript
   - wire
 - name: github.com/wakiyamap/monautil
-  version: d7c96a74d4d796a28562002f0d9c9150c8f6a4f7
+  version: acbd8209e7920509daaf04cb870f99f2618d5780
   subpackages:
   - base58
   - bech32
