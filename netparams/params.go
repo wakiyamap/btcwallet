@@ -18,16 +18,16 @@ type Params struct {
 // monad on the main network (wire.MainNet).
 var MainNetParams = Params{
 	Params:        &chaincfg.MainNetParams,
-	RPCClientPort: "8334",
-	RPCServerPort: "8332",
+	RPCClientPort: "9400",
+	RPCServerPort: "9402",
 }
 
 // TestNet4Params contains parameters specific running monawallet and
 // monad on the test network (version 3) (wire.TestNet4).
 var TestNet4Params = Params{
 	Params:        &chaincfg.TestNet4Params,
-	RPCClientPort: "18334",
-	RPCServerPort: "18332",
+	RPCClientPort: "19400",
+	RPCServerPort: "19402",
 }
 
 // SimNetParams contains parameters specific to the simulation test network
