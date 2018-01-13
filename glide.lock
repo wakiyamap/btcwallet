@@ -1,5 +1,5 @@
-hash: a655a6d772027c6e42302be1f92c59bf357fff5614e57965d42d87866e7183c3
-updated: 2018-01-07T03:23:47.965499395+09:00
+hash: 37978d06088a240c0d25b84b7e774938899da617d50b3aeae6c316e86e807c05
+updated: 2018-01-14T02:29:09.141355695+09:00
 imports:
 - name: github.com/aead/siphash
   version: e404fcfc888570cadd1610538e2dbc89f66af814
@@ -14,7 +14,7 @@ imports:
 - name: github.com/boltdb/bolt
   version: 2f1ce7a837dcb8da3ec595b1dac9d0632f0f99e8
 - name: github.com/btcsuite/btclog
-  version: 84c8d2346e9fc8c7b947e243b9c24e6df9fd206a
+  version: 96c2a91a67da03552a5e6554fe3ccbfbc7f860be
 - name: github.com/btcsuite/go-socks
   version: 4720035b7bfd2a9bb130b1c184f8bbe41b6f0d0f
   subpackages:
@@ -32,13 +32,13 @@ imports:
 - name: github.com/btcsuite/websocket
   version: 31079b6807923eb23992c421b114992b95131b55
 - name: github.com/davecgh/go-spew
-  version: ecdeabc65495df2dec95d7c4a4c3e021903035e5
+  version: 346938d642f2ec3594ed81d874461961cd0faa76
   subpackages:
   - spew
 - name: github.com/dchest/blake256
   version: dee3fe6eb0e98dc774a94fc231f85baf7c29d360
 - name: github.com/golang/protobuf
-  version: ab9f9a6dab164b7d1246e0e688b0ab7b94d8553e
+  version: 1e59b77b52bf8e4b449a57e6f79f21226d571845
   subpackages:
   - proto
 - name: github.com/jessevdk/go-flags
@@ -52,7 +52,7 @@ imports:
 - name: github.com/wakiyamap/lyra2rev2
   version: bae9ad2043bb55facb14c4918e909f88a7d3ed84
 - name: github.com/wakiyamap/monad
-  version: 4592e7d0d895190398002c4de2d5dda6c26f613d
+  version: cc72b768dbb656e6e4493e937eaba51d2f8dd0bf
   subpackages:
   - addrmgr
   - blockchain
@@ -80,12 +80,12 @@ imports:
   - filterdb
   - headerfs
 - name: golang.org/x/crypto
-  version: 9419663f5a44be8b34ca85f08abc5fe1be11f8a3
+  version: 122d919ec1efcfb58483215da23f815853e24b81
   subpackages:
   - ripemd160
   - ssh/terminal
 - name: golang.org/x/net
-  version: 66aacef3dd8a676686c7ae3716979581e8b03c47
+  version: d866cfc389cec985d6fda2859936a575a55a3ab6
   subpackages:
   - context
   - http2
@@ -95,10 +95,9 @@ imports:
   - lex/httplex
   - trace
 - name: golang.org/x/sys
-  version: ab9e364efd8b52800ff7ee48a9ffba4e0ed78dfb
+  version: 83801418e1b59fb1880e363299581ee543af32ca
   subpackages:
   - unix
-  - windows
 - name: golang.org/x/text
   version: 18c65dde6afd36dbc39197ca72008895b8dfbfb6
   subpackages:
