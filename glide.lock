@@ -1,5 +1,5 @@
-hash: 1700a8691234136de9d15280e653f0d0ac78f8f9c786961c93905962cf4742d9
-updated: 2018-01-14T02:36:11.105111909+09:00
+hash: 4b52c9faac4123a04ffe882321c04e14725d4953cc7286556e80508c759ca6d3
+updated: 2018-01-17T15:01:50.406623661+09:00
 imports:
 - name: github.com/aead/siphash
   version: e404fcfc888570cadd1610538e2dbc89f66af814
@@ -14,7 +14,7 @@ imports:
 - name: github.com/boltdb/bolt
   version: 2f1ce7a837dcb8da3ec595b1dac9d0632f0f99e8
 - name: github.com/btcsuite/btclog
-  version: 96c2a91a67da03552a5e6554fe3ccbfbc7f860be
+  version: 84c8d2346e9fc8c7b947e243b9c24e6df9fd206a
 - name: github.com/btcsuite/go-socks
   version: 4720035b7bfd2a9bb130b1c184f8bbe41b6f0d0f
   subpackages:
@@ -32,7 +32,7 @@ imports:
 - name: github.com/btcsuite/websocket
   version: 31079b6807923eb23992c421b114992b95131b55
 - name: github.com/davecgh/go-spew
-  version: 346938d642f2ec3594ed81d874461961cd0faa76
+  version: ecdeabc65495df2dec95d7c4a4c3e021903035e5
   subpackages:
   - spew
 - name: github.com/dchest/blake256
@@ -52,7 +52,7 @@ imports:
 - name: github.com/wakiyamap/lyra2rev2
   version: bae9ad2043bb55facb14c4918e909f88a7d3ed84
 - name: github.com/wakiyamap/monad
-  version: cc72b768dbb656e6e4493e937eaba51d2f8dd0bf
+  version: ddbad07741f78fb2a67df2a9c8b0bc6f26209d3a
   subpackages:
   - addrmgr
   - blockchain
@@ -75,12 +75,12 @@ imports:
   - gcs/builder
   - hdkeychain
 - name: github.com/wakiyamap/neutrino
-  version: b6a253490e9b0f5d89f9177534bfb061e5501d9e
+  version: 40557b8a1a6998a05d583d93e94d4cbee4886575
   subpackages:
   - filterdb
   - headerfs
 - name: golang.org/x/crypto
-  version: 122d919ec1efcfb58483215da23f815853e24b81
+  version: 9419663f5a44be8b34ca85f08abc5fe1be11f8a3
   subpackages:
   - ripemd160
   - ssh/terminal
@@ -98,6 +98,7 @@ imports:
   version: 83801418e1b59fb1880e363299581ee543af32ca
   subpackages:
   - unix
+  - windows
 - name: golang.org/x/text
   version: 18c65dde6afd36dbc39197ca72008895b8dfbfb6
   subpackages:
