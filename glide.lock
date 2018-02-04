@@ -1,5 +1,5 @@
-hash: 5635ac72e51b3d042f084eac8fceaa7662bee6d2c8635de5e2ba527ae5f67550
-updated: 2018-01-20T00:22:45.740723093+09:00
+hash: 26db5fc1c0e8d0d44867a17fccbd56c4eb2e1345a2411f4b4386518c9bb7d324
+updated: 2018-02-05T06:05:14.635750449+09:00
 imports:
 - name: github.com/aead/siphash
   version: e404fcfc888570cadd1610538e2dbc89f66af814
@@ -49,6 +49,8 @@ imports:
   - rotator
 - name: github.com/kkdai/bstream
   version: f391b8402d23024e7c0f624b31267a89998fca95
+- name: github.com/lightninglabs/gozmq
+  version: 0d266ba6d55ea65c18c7a02d8992c89355149e80
 - name: github.com/wakiyamap/lyra2rev2
   version: bae9ad2043bb55facb14c4918e909f88a7d3ed84
 - name: github.com/wakiyamap/monad
