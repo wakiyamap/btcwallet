@@ -14,8 +14,8 @@ import (
 // TODO: Refactor each into a driver and use dynamic registration.
 func BackEnds() []string {
 	return []string{
-		"bitcoind",
-		"btcd",
+		"monacoind",
+		"monad",
 		"neutrino",
 	}
 }
