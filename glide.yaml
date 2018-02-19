@@ -3,7 +3,7 @@ import:
 - package: github.com/boltdb/bolt
   version: ^1.3.0
 - package: github.com/wakiyamap/monad
-  version: 76296df894fbe896de57e73a8c1943fcab651aca
+  version: 208505c616096c74ba96db843e1b69be8adf2ff2
   subpackages:
   - blockchain
   - btcec
