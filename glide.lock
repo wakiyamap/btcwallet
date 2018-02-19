@@ -1,5 +1,5 @@
-hash: 980e01ca0b81304b3a75354ecb7be3179fa2fc39beadedefb0f335fcdce3b5c9
-updated: 2018-02-20T00:13:28.334439995+09:00
+hash: 632ff6b255c5b164cc463323a09bedc2338c3705da5ec1360b423ac5b14cb7f2
+updated: 2018-02-20T00:20:42.545905995+09:00
 imports:
 - name: github.com/aead/siphash
   version: e404fcfc888570cadd1610538e2dbc89f66af814
@@ -77,7 +77,7 @@ imports:
   - gcs/builder
   - hdkeychain
 - name: github.com/wakiyamap/neutrino
-  version: 07699928507b2212c7a73635ed712fcacf0fc310
+  version: 35b6f83fc56e109836cc0f6daa20f13f7bfd2a2c
   subpackages:
   - filterdb
   - headerfs
