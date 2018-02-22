@@ -3,7 +3,7 @@ import:
 - package: github.com/boltdb/bolt
   version: ^1.3.0
 - package: github.com/wakiyamap/monad
-  version: 208505c616096c74ba96db843e1b69be8adf2ff2
+  version: 632ca5efe64b93f695b126448d3781b98f627cb0
   subpackages:
   - blockchain
   - btcec
@@ -18,7 +18,7 @@ import:
   subpackages:
   - hdkeychain
 - package: github.com/wakiyamap/neutrino
-  version: 35b6f83fc56e109836cc0f6daa20f13f7bfd2a2c
+  version: afd595867cffa77ccac8b921cfa0e0dfd9a5ba9a
 - package: github.com/btcsuite/golangcrypto
   subpackages:
   - nacl/secretbox
