@@ -140,8 +140,9 @@ func (w *Wallet) connectBlock(dbtx walletdb.ReadWriteTx, b wtxmgr.BlockMeta) err
 	addrmgrNs := dbtx.ReadWriteBucket(waddrmgrNamespaceKey)
 
 	bs := waddrmgr.BlockStamp{
-		Height: b.Height,
-		Hash:   b.Hash,
+		Height:    b.Height,
+		Hash:      b.Hash,
+		Timestamp: b.Time,
 	}
 	err := w.Manager.SetSyncedTo(addrmgrNs, &bs)
 	if err != nil {
@@ -182,6 +183,15 @@ func (w *Wallet) disconnectBlock(dbtx walletdb.ReadWriteTx, b wtxmgr.BlockMeta) 
 				return err
 			}
 			b.Hash = *hash
+
+			client := w.ChainClient()
+			header, err := client.GetBlockHeader(hash)
+			if err != nil {
+				return err
+			}
+
+			bs.Timestamp = header.Timestamp
+
 			err = w.Manager.SetSyncedTo(addrmgrNs, &bs)
 			if err != nil {
 				return err
@@ -252,14 +262,14 @@ func (w *Wallet) addRelevantTx(dbtx walletdb.ReadWriteTx, rec *wtxmgr.TxRecord, 
 	if block == nil {
 		details, err := w.TxStore.UniqueTxDetails(txmgrNs, &rec.Hash, nil)
 		if err != nil {
-			log.Errorf("Cannot query transaction details for notifiation: %v", err)
+			log.Errorf("Cannot query transaction details for notification: %v", err)
 		} else {
 			w.NtfnServer.notifyUnminedTransaction(dbtx, details)
 		}
 	} else {
 		details, err := w.TxStore.UniqueTxDetails(txmgrNs, &rec.Hash, &block.Block)
 		if err != nil {
-			log.Errorf("Cannot query transaction details for notifiation: %v", err)
+			log.Errorf("Cannot query transaction details for notification: %v", err)
 		} else {
 			w.NtfnServer.notifyMinedTransaction(dbtx, details, block)
 		}
