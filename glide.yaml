@@ -3,7 +3,7 @@ import:
 - package: github.com/coreos/bbolt
   version: 4f5275f4ebbf6fe7cb772de987fa96ee674460a7
 - package: github.com/wakiyamap/monad
-  version: 8139a2a986a0a52dc149e53ec3167a1ce155d3c0
+  version: a2f3b066937beca665eb5ab5799484d66c94968d
   subpackages:
   - blockchain
   - btcec
@@ -18,7 +18,7 @@ import:
   subpackages:
   - hdkeychain
 - package: github.com/wakiyamap/neutrino
-  version: afd595867cffa77ccac8b921cfa0e0dfd9a5ba9a
+  version: b814fb22a7cde0b6afecb567e9b594280c5d3654
 - package: github.com/btcsuite/golangcrypto
   subpackages:
   - nacl/secretbox
