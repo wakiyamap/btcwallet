@@ -18,7 +18,7 @@ import:
   subpackages:
   - hdkeychain
 - package: github.com/wakiyamap/neutrino
-  version: b814fb22a7cde0b6afecb567e9b594280c5d3654
+  version: 8d119eabfe9a29c2932730edc669902a54a8210d
 - package: github.com/btcsuite/golangcrypto
   subpackages:
   - nacl/secretbox
