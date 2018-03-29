@@ -15,7 +15,7 @@ import (
 )
 
 // DefaultRelayFeePerKb is the default minimum relay fee policy for a mempool. monacoin's relayfee*100
-const DefaultRelayFeePerKb monautil.Amount = 1.01e5
+const DefaultRelayFeePerKb monautil.Amount = 1e5
 
 // GetDustThreshold is used to define the amount below which output will be
 // determined as dust. Threshold is determined as 3 times the relay fee.
