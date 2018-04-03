@@ -1,5 +1,5 @@
-hash: c377799e240607ad1965bc2ac34941e9d7cda2189f6b6c06a92425a99447b7b6
-updated: 2018-03-30T03:02:24.85343526+09:00
+hash: 4a92334c69b675d9a3cff85edad80a57063880b0b3ccdeee52019dfd88998082
+updated: 2018-04-03T23:47:47.201121435+09:00
 imports:
 - name: github.com/aead/siphash
   version: e404fcfc888570cadd1610538e2dbc89f66af814
@@ -54,7 +54,7 @@ imports:
 - name: github.com/wakiyamap/lyra2rev2
   version: bae9ad2043bb55facb14c4918e909f88a7d3ed84
 - name: github.com/wakiyamap/monad
-  version: a2f3b066937beca665eb5ab5799484d66c94968d
+  version: 334ed97b997397b5357ef335a2362902efbfdaea
   subpackages:
   - addrmgr
   - blockchain
@@ -69,7 +69,7 @@ imports:
   - txscript
   - wire
 - name: github.com/wakiyamap/monautil
-  version: f5bfcf53b9ae24b8146086c9c11790a5f0616d9d
+  version: 5633c0880c69eabe323bf209e7878b5e4aa29595
   subpackages:
   - base58
   - bech32
@@ -77,7 +77,7 @@ imports:
   - gcs/builder
   - hdkeychain
 - name: github.com/wakiyamap/neutrino
-  version: 8d119eabfe9a29c2932730edc669902a54a8210d
+  version: 2ca5ff190a96a08cd57f655cef95af8fbe6e9b81
   subpackages:
   - filterdb
   - headerfs
