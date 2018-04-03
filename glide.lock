@@ -1,5 +1,5 @@
-hash: 4a92334c69b675d9a3cff85edad80a57063880b0b3ccdeee52019dfd88998082
-updated: 2018-04-03T23:47:47.201121435+09:00
+hash: ce1836e95ca006c708bb9050d7daca46ccde25656e9d8013178c3e576a2b629b
+updated: 2018-04-04T01:17:16.579963707+09:00
 imports:
 - name: github.com/aead/siphash
   version: e404fcfc888570cadd1610538e2dbc89f66af814
@@ -32,7 +32,7 @@ imports:
 - name: github.com/coreos/bbolt
   version: 4f5275f4ebbf6fe7cb772de987fa96ee674460a7
 - name: github.com/davecgh/go-spew
-  version: 346938d642f2ec3594ed81d874461961cd0faa76
+  version: ecdeabc65495df2dec95d7c4a4c3e021903035e5
   subpackages:
   - spew
 - name: github.com/dchest/blake256
@@ -77,12 +77,12 @@ imports:
   - gcs/builder
   - hdkeychain
 - name: github.com/wakiyamap/neutrino
-  version: 2ca5ff190a96a08cd57f655cef95af8fbe6e9b81
+  version: cf4db845cb6829599bdf437643d019a2403fae27
   subpackages:
   - filterdb
   - headerfs
 - name: golang.org/x/crypto
-  version: 49796115aa4b964c318aad4f3084fdb41e9aa067
+  version: 9419663f5a44be8b34ca85f08abc5fe1be11f8a3
   subpackages:
   - ripemd160
   - ssh/terminal
