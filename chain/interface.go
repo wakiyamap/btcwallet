@@ -34,7 +34,7 @@ type Interface interface {
 	FilterBlocks(*FilterBlocksRequest) (*FilterBlocksResponse, error)
 	BlockStamp() (*waddrmgr.BlockStamp, error)
 	SendRawTransaction(*wire.MsgTx, bool) (*chainhash.Hash, error)
-	Rescan(*chainhash.Hash, []monautil.Address, []*wire.OutPoint) error
+	Rescan(*chainhash.Hash, []monautil.Address, map[wire.OutPoint]monautil.Address) error
 	NotifyReceived([]monautil.Address) error
 	NotifyBlocks() error
 	Notifications() <-chan interface{}
@@ -70,7 +70,7 @@ type (
 		Blocks           []wtxmgr.BlockMeta
 		ExternalAddrs    map[waddrmgr.ScopedIndex]monautil.Address
 		InternalAddrs    map[waddrmgr.ScopedIndex]monautil.Address
-		WatchedOutPoints map[wire.OutPoint]struct{}
+		WatchedOutPoints map[wire.OutPoint]monautil.Address
 	}
 
 	// FilterBlocksResponse reports the set of all internal and external
@@ -85,7 +85,7 @@ type (
 		BlockMeta          wtxmgr.BlockMeta
 		FoundExternalAddrs map[waddrmgr.KeyScope]map[uint32]struct{}
 		FoundInternalAddrs map[waddrmgr.KeyScope]map[uint32]struct{}
-		FoundOutPoints     map[wire.OutPoint]struct{}
+		FoundOutPoints     map[wire.OutPoint]monautil.Address
 		RelevantTxns       []*wire.MsgTx
 	}
 

@@ -140,6 +140,21 @@ func (c *RPCClient) Stop() {
 	c.quitMtx.Unlock()
 }
 
+// Rescan wraps the normal Rescan command with an additional paramter that
+// allows us to map an oupoint to the address in the chain that it pays to.
+// This is useful when using BIP 158 filters as they include the prev pkScript
+// rather than the full outpoint.
+func (c *RPCClient) Rescan(startHash *chainhash.Hash, addrs []monautil.Address,
+	outPoints map[wire.OutPoint]monautil.Address) error {
+
+	flatOutpoints := make([]*wire.OutPoint, 0, len(outPoints))
+	for ops := range outPoints {
+		flatOutpoints = append(flatOutpoints, &ops)
+	}
+
+	return c.Client.Rescan(startHash, addrs, flatOutpoints)
+}
+
 // WaitForShutdown blocks until both the client has finished disconnecting
 // and all handlers have exited.
 func (c *RPCClient) WaitForShutdown() {
@@ -200,7 +215,9 @@ func (c *RPCClient) FilterBlocks(
 			continue
 		}
 
-		filter, err := gcs.FromNBytes(builder.DefaultP, rawFilter.Data)
+		filter, err := gcs.FromNBytes(
+			builder.DefaultP, builder.DefaultM, rawFilter.Data,
+		)
 		if err != nil {
 			return nil, err
 		}
@@ -425,7 +442,7 @@ out:
 			// TODO: A minute timeout is used to prevent the handler loop from
 			// blocking here forever, but this is much larger than it needs to
 			// be due to dcrd processing websocket requests synchronously (see
-			// https://github.com/wakiyamap/monad/issues/504).  Decrease this to
+			// https://github.com/btcsuite/btcd/issues/504).  Decrease this to
 			// something saner like 3s when the above issue is fixed.
 			type sessionResult struct {
 				err error

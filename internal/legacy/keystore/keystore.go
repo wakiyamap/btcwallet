@@ -22,6 +22,8 @@ import (
 	"sync"
 	"time"
 
+	"golang.org/x/crypto/ripemd160"
+
 	"github.com/wakiyamap/monad/btcec"
 	"github.com/wakiyamap/monad/chaincfg"
 	"github.com/wakiyamap/monad/chaincfg/chainhash"
@@ -29,7 +31,6 @@ import (
 	"github.com/wakiyamap/monad/wire"
 	"github.com/wakiyamap/monautil"
 	"github.com/wakiyamap/monawallet/internal/legacy/rename"
-	"github.com/btcsuite/golangcrypto/ripemd160"
 )
 
 const (

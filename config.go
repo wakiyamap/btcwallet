@@ -16,12 +16,12 @@ import (
 	"time"
 
 	flags "github.com/jessevdk/go-flags"
-	"github.com/wakiyamap/neutrino"
 	"github.com/wakiyamap/monautil"
 	"github.com/wakiyamap/monawallet/internal/cfgutil"
 	"github.com/wakiyamap/monawallet/internal/legacy/keystore"
 	"github.com/wakiyamap/monawallet/netparams"
 	"github.com/wakiyamap/monawallet/wallet"
+	"github.com/wakiyamap/neutrino"
 )
 
 const (

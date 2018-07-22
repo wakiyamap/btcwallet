@@ -142,6 +142,7 @@ func makeInputSource(outputs []btcjson.ListUnspentResult) txauthor.InputSource {
 	var (
 		totalInputValue monautil.Amount
 		inputs          = make([]*wire.TxIn, 0, len(outputs))
+		inputValues     = make([]monautil.Amount, 0, len(outputs))
 		sourceErr       error
 	)
 	for _, output := range outputs {
@@ -172,14 +173,15 @@ func makeInputSource(outputs []btcjson.ListUnspentResult) txauthor.InputSource {
 		}
 
 		inputs = append(inputs, wire.NewTxIn(&previousOutPoint, nil, nil))
+		inputValues = append(inputValues, outputAmount)
 	}
 
 	if sourceErr == nil && totalInputValue == 0 {
 		sourceErr = noInputValue{}
 	}
 
-	return func(monautil.Amount) (monautil.Amount, []*wire.TxIn, [][]byte, error) {
-		return totalInputValue, inputs, nil, sourceErr
+	return func(monautil.Amount) (monautil.Amount, []*wire.TxIn, []monautil.Amount, [][]byte, error) {
+		return totalInputValue, inputs, inputValues, nil, sourceErr
 	}
 }
 

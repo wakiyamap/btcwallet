@@ -1,4 +1,4 @@
-// Copyright (c) 2013-2015 The btcsuite developers
+// Copyright (c) 2013-2017 The btcsuite developers
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
@@ -11,14 +11,15 @@ import (
 	"path/filepath"
 
 	"github.com/btcsuite/btclog"
-	"github.com/jrick/logrotate/rotator"
-	"github.com/wakiyamap/neutrino"
+
 	"github.com/wakiyamap/monad/rpcclient"
 	"github.com/wakiyamap/monawallet/chain"
 	"github.com/wakiyamap/monawallet/rpc/legacyrpc"
 	"github.com/wakiyamap/monawallet/rpc/rpcserver"
 	"github.com/wakiyamap/monawallet/wallet"
 	"github.com/wakiyamap/monawallet/wtxmgr"
+	"github.com/jrick/logrotate/rotator"
+	"github.com/wakiyamap/neutrino"
 )
 
 // logWriter implements an io.Writer that outputs to both standard output and

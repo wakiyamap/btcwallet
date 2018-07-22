@@ -15,7 +15,6 @@ import (
 	"sync"
 	"time"
 
-	"github.com/davecgh/go-spew/spew"
 	"github.com/wakiyamap/monad/blockchain"
 	"github.com/wakiyamap/monad/btcec"
 	"github.com/wakiyamap/monad/btcjson"
@@ -24,6 +23,8 @@ import (
 	"github.com/wakiyamap/monad/rpcclient"
 	"github.com/wakiyamap/monad/txscript"
 	"github.com/wakiyamap/monad/wire"
+	"github.com/davecgh/go-spew/spew"
+
 	"github.com/wakiyamap/monautil"
 	"github.com/wakiyamap/monautil/hdkeychain"
 	"github.com/wakiyamap/monawallet/chain"
@@ -366,6 +367,7 @@ func (w *Wallet) syncWithChain() error {
 		// backend starts synchronizing at the same time as the wallet.
 		_, bestHeight, err := chainClient.GetBestBlock()
 		if err != nil {
+			tx.Rollback()
 			return err
 		}
 
@@ -402,6 +404,7 @@ func (w *Wallet) syncWithChain() error {
 			// size of 2000.
 			recoveryMgr = NewRecoveryManager(
 				w.recoveryWindow, recoveryBatchSize,
+				w.chainParams,
 			)
 
 			// In the event that this recovery is being resumed, we
@@ -742,8 +745,8 @@ expandHorizons:
 
 	// Update the global set of watched outpoints with any that were found
 	// in the block.
-	for outPoint := range filterResp.FoundOutPoints {
-		recoveryState.AddWatchedOutPoint(&outPoint)
+	for outPoint, addr := range filterResp.FoundOutPoints {
+		recoveryState.AddWatchedOutPoint(&outPoint, addr)
 	}
 
 	// Finally, record all of the relevant transactions that were returned
@@ -1512,7 +1515,6 @@ func (w *Wallet) HaveAddress(a monautil.Address) (bool, error) {
 	if err == nil {
 		return true, nil
 	}
-
 	if waddrmgr.IsError(err, waddrmgr.ErrAddressNotFound) {
 		return false, nil
 	}
@@ -2824,9 +2826,7 @@ func (w *Wallet) NewChangeAddress(account uint32, scope waddrmgr.KeyScope) (addr
 	return
 }
 
-func (w *Wallet) newChangeAddress(addrmgrNs walletdb.ReadWriteBucket,
-	account uint32) (monautil.Address, error) {
-
+func (w *Wallet) newChangeAddress(addrmgrNs walletdb.ReadWriteBucket, account uint32) (monautil.Address, error) {
 	// As we're making a change address, we'll fetch the type of manager
 	// that is able to make p2wkh output as they're the most efficient.
 	scopes := w.Manager.ScopesForExternalAddrType(

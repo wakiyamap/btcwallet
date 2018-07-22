@@ -8,6 +8,7 @@ import (
 	"github.com/wakiyamap/monad/chaincfg"
 	"github.com/wakiyamap/monad/chaincfg/chainhash"
 	"github.com/wakiyamap/monad/wire"
+	"github.com/wakiyamap/monautil"
 	"github.com/wakiyamap/monawallet/chain"
 )
 
@@ -272,9 +273,9 @@ func TestBlockFiltererOneInOneOut(t *testing.T) {
 
 	// Add each of their single previous outpoints to the set of watched
 	// outpoints to filter for.
-	watchedOutPoints := make(map[wire.OutPoint]struct{})
-	watchedOutPoints[firstTx.TxIn[0].PreviousOutPoint] = struct{}{}
-	watchedOutPoints[lastTx.TxIn[0].PreviousOutPoint] = struct{}{}
+	watchedOutPoints := make(map[wire.OutPoint]monautil.Address)
+	watchedOutPoints[firstTx.TxIn[0].PreviousOutPoint] = &monautil.AddressWitnessPubKeyHash{}
+	watchedOutPoints[lastTx.TxIn[0].PreviousOutPoint] = &monautil.AddressWitnessPubKeyHash{}
 
 	// Construct a filter request, watching only for the outpoints above,
 	// and construct a block filterer.

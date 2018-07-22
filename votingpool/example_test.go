@@ -22,6 +22,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"time"
 
 	"github.com/wakiyamap/monad/chaincfg"
 	"github.com/wakiyamap/monad/txscript"
@@ -42,7 +43,7 @@ var (
 
 func createWaddrmgr(ns walletdb.ReadWriteBucket, params *chaincfg.Params) (*waddrmgr.Manager, error) {
 	err := waddrmgr.Create(ns, seed, pubPassphrase, privPassphrase, params,
-		fastScrypt)
+		fastScrypt, time.Now())
 	if err != nil {
 		return nil, err
 	}
