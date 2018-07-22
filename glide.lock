@@ -73,7 +73,7 @@ imports:
 - name: github.com/lightninglabs/gozmq
   version: 462a8a75388506b68f76661af8d649f0b88e5301
 - name: github.com/wakiyamap/monad
-  version: 2c923c74583e2917c59a41d61584c8a40be28060
+  version: b5c77b19b67103aa60671d5997f1ad4c7e963d11
   subpackages:
   - addrmgr
   - blockchain
