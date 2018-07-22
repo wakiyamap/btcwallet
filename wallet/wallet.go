@@ -367,7 +367,6 @@ func (w *Wallet) syncWithChain() error {
 		// backend starts synchronizing at the same time as the wallet.
 		_, bestHeight, err := chainClient.GetBestBlock()
 		if err != nil {
-			tx.Rollback()
 			return err
 		}
 
