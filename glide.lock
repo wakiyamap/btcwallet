@@ -1,8 +1,8 @@
-hash: 4adbf2422f5206760b9f27fca052c58fe8024d88a00a477139d565a7971b28d5
-updated: 2018-07-22T18:41:06.472595114+09:00
+hash: f22d4764e5d4a4699ee4449dee38bec7a69cc0e32f6a3982e43e6ea0acdff539
+updated: 2018-11-29T17:48:48.653319946+09:00
 imports:
 - name: github.com/aead/siphash
-  version: e404fcfc888570cadd1610538e2dbc89f66af814
+  version: 83563a290f60225eb120d724600b9690c3fb536f
 - name: github.com/aead/skein
   version: 9365ae6e95d294dc113a0b308852f97c916db233
   subpackages:
@@ -73,7 +73,7 @@ imports:
 - name: github.com/lightninglabs/gozmq
   version: 462a8a75388506b68f76661af8d649f0b88e5301
 - name: github.com/wakiyamap/monad
-  version: b5c77b19b67103aa60671d5997f1ad4c7e963d11
+  version: 6e07702f30437fc5547d3bcf3f98fb8629e5c6ee
   subpackages:
   - addrmgr
   - blockchain
@@ -96,10 +96,13 @@ imports:
   - gcs/builder
   - hdkeychain
 - name: github.com/wakiyamap/neutrino
-  version: 10f348d583e54da146b33aa0fad3d8bf1945d795
+  version: 5779d36f4b280f5898c3803a7640e962cb4479f3
   subpackages:
+  - cache
+  - cache/lru
   - filterdb
   - headerfs
+  - headerlist
 - name: golang.org/x/crypto
   version: 9419663f5a44be8b34ca85f08abc5fe1be11f8a3
   subpackages:
