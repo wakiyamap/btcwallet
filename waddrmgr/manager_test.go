@@ -14,12 +14,12 @@ import (
 	"testing"
 	"time"
 
+	"github.com/davecgh/go-spew/spew"
 	"github.com/wakiyamap/monad/chaincfg"
 	"github.com/wakiyamap/monad/chaincfg/chainhash"
 	"github.com/wakiyamap/monautil"
 	"github.com/wakiyamap/monawallet/snacl"
 	"github.com/wakiyamap/monawallet/walletdb"
-	"github.com/davecgh/go-spew/spew"
 )
 
 // failingCryptoKey is an implementation of the EncryptorDecryptor interface

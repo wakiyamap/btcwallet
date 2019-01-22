@@ -57,7 +57,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 
-	"github.com/btcsuite/monautil"
+	"github.com/wakiyamap/monautil"
 )
 
 var certificateFile = filepath.Join(monautil.AppDataDir("monawallet", false), "rpc.cert")

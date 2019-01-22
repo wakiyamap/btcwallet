@@ -6,9 +6,9 @@ import (
 	"reflect"
 	"testing"
 
+	"github.com/davecgh/go-spew/spew"
 	"github.com/wakiyamap/monawallet/walletdb"
 	"github.com/wakiyamap/monawallet/walletdb/migration"
-	"github.com/davecgh/go-spew/spew"
 )
 
 type mockMigrationManager struct {

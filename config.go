@@ -37,7 +37,7 @@ const (
 )
 
 var (
-	monadDefaultCAFile  = filepath.Join(monautil.AppDataDir("monad", false), "rpc.cert")
+	monadDefaultCAFile = filepath.Join(monautil.AppDataDir("monad", false), "rpc.cert")
 	defaultAppDataDir  = monautil.AppDataDir("monawallet", false)
 	defaultConfigFile  = filepath.Join(defaultAppDataDir, defaultConfigFilename)
 	defaultRPCKeyFile  = filepath.Join(defaultAppDataDir, "rpc.key")

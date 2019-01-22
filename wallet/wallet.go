@@ -15,6 +15,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/davecgh/go-spew/spew"
 	"github.com/wakiyamap/monad/blockchain"
 	"github.com/wakiyamap/monad/btcec"
 	"github.com/wakiyamap/monad/btcjson"
@@ -32,7 +33,6 @@ import (
 	"github.com/wakiyamap/monawallet/walletdb"
 	"github.com/wakiyamap/monawallet/walletdb/migration"
 	"github.com/wakiyamap/monawallet/wtxmgr"
-	"github.com/davecgh/go-spew/spew"
 )
 
 const (

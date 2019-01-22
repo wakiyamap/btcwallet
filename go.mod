@@ -7,24 +7,24 @@ require (
 	github.com/btcsuite/btclog v0.0.0-20170628155309-84c8d2346e9f
 	github.com/btcsuite/go-socks v0.0.0-20170105172521-4720035b7bfd
 	github.com/btcsuite/golangcrypto v0.0.0-20150304025918-53f62d9b43e8
-	github.com/btcsuite/goleveldb v0.0.0-20160330041536-7834afc9e8cd
-	github.com/btcsuite/snappy-go v0.0.0-20151229074030-0bdef8d06723
+	github.com/btcsuite/goleveldb v1.0.0
+	github.com/btcsuite/snappy-go v1.0.0
 	github.com/btcsuite/websocket v0.0.0-20150119174127-31079b680792
 	github.com/coreos/bbolt v0.0.0-20180223184059-7ee3ded59d4835e10f3e7d0f7603c42aa5e83820
-	github.com/davecgh/go-spew v0.0.0-20171005155431-ecdeabc65495
+	github.com/davecgh/go-spew v1.1.1
 	github.com/dchest/blake256 v1.0.0
 	github.com/golang/protobuf v0.0.0-20180715082332-14aad3d5ea4c
-	github.com/jessevdk/go-flags v0.0.0-20141203071132-1679536dcc89
+	github.com/jessevdk/go-flags v1.4.0
 	github.com/jrick/logrotate v1.0.0
-	github.com/kkdai/bstream v0.0.0-20161212061736-f391b8402d23
+	github.com/kkdai/bstream v0.0.0-20181106074824-b3251f7901ec
 	github.com/lightninglabs/gozmq v0.0.0-20180324010646-462a8a753885
-	github.com/wakiyamap/monad v0.0.0-20181129070718-6e07702f3043
-	github.com/wakiyamap/monautil v0.0.0-20180721224902-c1fba54cb210
+	github.com/wakiyamap/monad v0.0.0-20190117160027-d338af568999
+	github.com/wakiyamap/monautil v0.0.0-20190122162447-650da7231055
 	github.com/wakiyamap/neutrino v0.0.0-20181107161623-5779d36f4b28
-	golang.org/x/crypto v0.0.0-20170930174604-9419663f5a44
-	golang.org/x/net v0.0.0-20180712202826-d0887baf81f4
+	golang.org/x/crypto v0.0.0-20190103213133-ff983b9c42bc
+	golang.org/x/net v0.0.0-20180719180050-a680a1efc54d
 	golang.org/x/sys v0.0.0-20180715085529-ac767d655b30
-	golang.org/x/text v0.0.0-20180708171225-0605a8320ace
+	golang.org/x/text v0.3.0
 	google.golang.org/genproto v0.0.0-20180716172848-2731d4fa720b
 	google.golang.org/grpc v1.12.0
 )

@@ -8,8 +8,8 @@ import (
 	"io"
 	"os"
 
-	"github.com/wakiyamap/monawallet/walletdb"
 	"github.com/coreos/bbolt"
+	"github.com/wakiyamap/monawallet/walletdb"
 )
 
 // convertErr converts some bolt errors to the equivalent walletdb error.

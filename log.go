@@ -12,13 +12,13 @@ import (
 
 	"github.com/btcsuite/btclog"
 
+	"github.com/jrick/logrotate/rotator"
 	"github.com/wakiyamap/monad/rpcclient"
 	"github.com/wakiyamap/monawallet/chain"
 	"github.com/wakiyamap/monawallet/rpc/legacyrpc"
 	"github.com/wakiyamap/monawallet/rpc/rpcserver"
 	"github.com/wakiyamap/monawallet/wallet"
 	"github.com/wakiyamap/monawallet/wtxmgr"
-	"github.com/jrick/logrotate/rotator"
 	"github.com/wakiyamap/neutrino"
 )
 
