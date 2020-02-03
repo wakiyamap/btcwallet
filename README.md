@@ -1,3 +1,8 @@
+## Attention
+This repository is old.
+Please use the following URL for monacoin's monawallet.
+https://github.com/monasuite/monawallet
+
 monawallet
 =========
 
